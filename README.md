@@ -20,6 +20,7 @@ git clone https://github.com/hyperledger/fabric-sdk-java.git
 ```
 ```
 cd fabric-sdk-java
+GOPATH=$PWD/src/test/fixture
 mvn install -DskipTests
 ```
 
