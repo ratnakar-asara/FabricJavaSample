@@ -9,6 +9,9 @@ The commit levels used are:
 | fabric-ca      | bf8fb4d5e497217cd6125025830aa6870de442aa   | Jan 27 2017 |
 
 
+The program is **not** using multi-channels and is using the channel:
+org.hyperledger.fabric.sdkexamples.chainid = testchainid
+for communiation with the peer and ordering service. 
 
 ## How to use  Fabric Java SDK with a sample program
 
