@@ -13,9 +13,14 @@ The program is **not** using multi-channels and is using the channel:
 org.hyperledger.fabric.sdkexamples.chainid = testchainid
 for communiation with the peer and ordering service. 
 
+## Prerequisites
+To build this project, following dependencies must be met
+* JDK 1.8 or above
+* Apache Maven
+* [Docker](https://www.docker.com/products/overview) - v1.12 or higher
+* [Docker Compose](https://docs.docker.com/compose/overview/) - v1.8 or higher
+
 ## How to use  Fabric Java SDK with a sample program
-
-
 
 **Step 1:**  Clone the java sdk repository and building jar
 
