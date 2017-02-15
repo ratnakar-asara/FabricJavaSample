@@ -4,7 +4,7 @@ The following example demonstrates the java sdk running a sample program against
 The commit levels used are:
 
 | Project        | Commit level                               | Date        |
-|:---------------|:------------------------------------------:|------------:|
+|:---------------|:------------------------------------------:|------------:|mvn clean install exec:java
 | fabric         | 5d9e4ede298ab646ac918dc5b034c7d319dd1d9a   | Jan 30 2017 |
 | fabric-ca      | bf8fb4d5e497217cd6125025830aa6870de442aa   | Jan 27 2017 |
 
@@ -16,7 +16,7 @@ for communiation with the peer and ordering service.
 ## Prerequisites
 To build this project, following dependencies must be met
 * JDK 1.8 or above
-* Apache Maven
+* Apache Maven Version 3
 * [Docker](https://www.docker.com/products/overview) - v1.12 or higher
 * [Docker Compose](https://docs.docker.com/compose/overview/) - v1.8 or higher
 
