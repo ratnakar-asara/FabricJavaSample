@@ -14,7 +14,7 @@ The commit levels used are:
 
 
 
-Step 1:  Clone the java sdk repository and building jar
+**Step 1:**  Clone the java sdk repository and building jar
 
 Note: this assumes you will clone the repositories from your home directory.
 
@@ -28,7 +28,7 @@ mvn install -DskipTests
 We have just generated the **fabric-java-sdk-1.0-SNAPSHOT.jar** 
 **NOTE**: This is a short-term step until we have maven repository.
 
-Step 2:  Clone the repository to create a fabric
+**Step 2:**  Clone the repository to create a fabric
 ```
 cd ~
 git clone https://github.com/ratnakar-asara/FabricJavaSample.git
@@ -47,7 +47,7 @@ Now, we need to set the **GOPATH** to ensure the sdk can access your chaincode a
 GOPATH=$PWD
 ```
 
-Step 3:  Run Sample Program
+**Step 3:**  Run Sample Program
 
 
 Execute the below command to pull all the dependant libraries from maven.  This is a temporary solution and won't be needed once the java sdk jar is available in the maven repository.
@@ -81,4 +81,4 @@ FabricJavaSample/config.properties
 and can be customized as desired.
 
 
-Step 4:  In summary, this sample is based on source code:  FabricJavaSample/src/main/java/org/hyperledger/fabric/sdkexample/End2EndSample.java
+**Step 4:**  In summary, this sample is based on source code:  FabricJavaSample/src/main/java/org/hyperledger/fabric/sdkexample/End2EndSample.java
