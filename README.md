@@ -16,7 +16,7 @@ for communiation with the peer and ordering service.
 ## Prerequisites
 To build this project, following dependencies must be met
 * JDK 1.8 or above
-* Apache Maven Version 3
+* Apache Maven  
 * [Docker](https://www.docker.com/products/overview) - v1.12 or higher
 * [Docker Compose](https://docs.docker.com/compose/overview/) - v1.8 or higher
 
