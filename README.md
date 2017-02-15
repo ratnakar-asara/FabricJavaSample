@@ -1,55 +1,66 @@
-# How to use  Fabric Java SDK
+# Summary
+The following example demonstrates the java sdk running a sample program against docker images of a working commit level of the Hyperledger Fabric V1.0 architecture.  The development of the fabric is still under development.  This java program and fabric commit levels are not supported. 
 
-As per the instructions provided [here](https://github.com/hyperledger/fabric-sdk-java#running-the-end-to-end-tests) generate the required docker images.
-
-here is for your reference
-
-Hyperledger Fabric v1.0 is currently under active development and the very latest Hyperledger Fabric builds may not work with this sdk.
-You should use the following commit levels of the Hyperledger projects:
+The commit levels used are:
 
 | Project        | Commit level                               | Date        |
 |:---------------|:------------------------------------------:|------------:|
 | fabric         | 5d9e4ede298ab646ac918dc5b034c7d319dd1d9a   | Jan 30 2017 |
 | fabric-ca      | bf8fb4d5e497217cd6125025830aa6870de442aa   | Jan 27 2017 |
 
-Also generate the **fabric-java-sdk-1.0-SNAPSHOT.jar** after cloning and building the SDK code.
-**NOTE**: We don't have maven repository and can't avoid this step
+
+
+## How to use  Fabric Java SDK with a sample program
+
+
+
+Step 1:  Clone the java sdk repository and building jar
+
+Note: this assumes you will clone the repositories from your home directory.
 
 ```
+cd ~
 git clone https://github.com/hyperledger/fabric-sdk-java.git
-```
-```
 cd fabric-sdk-java
 GOPATH=$PWD/src/test/fixture
 mvn install -DskipTests
 ```
 
-Once the Jar and docker images are available , you are ready to go ahead and run the sample program.
+We have just generated the **fabric-java-sdk-1.0-SNAPSHOT.jar** 
+**NOTE**: This is a short-term step until we have maven repository.
 
-* execute the docker-compose file available in fabric-sdk-repo folder
+Step 2:  Clone the repository to create a network 
 ```
-cd fabric-sdk-java/tree/master/src/test/fixture/src
+cd ~
+git clone https://github.com/ratnakar-asara/FabricJavaSample.git
+cd FabricJavaSample
+```
 
+Run the docker-compose file that will pull the docker images and start your fabric
+
+```
 docker-compose up -d
 ```
 
-* Clone this repo
+Now, we need to set the GOPATH
+set **GOPATH** for the chaincode written in GO| Project        | Commit level                               | Date        |
+|:---------------|:------------------------------------------:|------------:|
+| fabric         | 5d9e4ede298ab646ac918dc5b034c7d319dd1d9a   | Jan 30 2017 |
+| fabric-ca      | bf8fb4d5e497217cd6125025830aa6870de442aa   | Jan 27 2017 |
+LANG to be properly packaged.
 ```
-https://github.com/ratnakar-asara/FabricJavaSample
-```
-
-set **GOPATH**
-```
-cd FabricJavaSample
 GOPATH=$PWD
 ```
 
-execute the below command:
+Step 3:  Run Sample Program
+
+
+Execute the below command to pull all the dependant libraries from maven.  This is a temporary solution and won't be needed once the java sdk jar is available in the maven repository.
 ```
  mvn clean install exec:java
 ```
 
-You should see the below comment:
+You should see the following output at the end of execution.
 
 
 ```
@@ -67,3 +78,12 @@ Query payload of b returned 300
 Completed End to End Demo ...
 
 ```
+
+**Note:**  
+The configuration file used for the java program are located at:
+FabricJavaSample/config.properties
+
+and can be customized as desired.
+
+
+Step 4:  In summary, this sample is based on source code:  FabricJavaSample/src/main/java/org/hyperledger/fabric/sdkexample/End2EndSample.java
