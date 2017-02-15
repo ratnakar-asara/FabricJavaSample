@@ -22,14 +22,13 @@ Note: this assumes you will clone the repositories from your home directory.
 cd ~
 git clone https://github.com/hyperledger/fabric-sdk-java.git
 cd fabric-sdk-java
-GOPATH=$PWD/src/test/fixture
 mvn install -DskipTests
 ```
 
 We have just generated the **fabric-java-sdk-1.0-SNAPSHOT.jar** 
 **NOTE**: This is a short-term step until we have maven repository.
 
-Step 2:  Clone the repository to create a network 
+Step 2:  Clone the repository to create a fabric
 ```
 cd ~
 git clone https://github.com/ratnakar-asara/FabricJavaSample.git
@@ -42,12 +41,8 @@ Run the docker-compose file that will pull the docker images and start your fabr
 docker-compose up -d
 ```
 
-Now, we need to set the GOPATH
-set **GOPATH** for the chaincode written in GO| Project        | Commit level                               | Date        |
-|:---------------|:------------------------------------------:|------------:|
-| fabric         | 5d9e4ede298ab646ac918dc5b034c7d319dd1d9a   | Jan 30 2017 |
-| fabric-ca      | bf8fb4d5e497217cd6125025830aa6870de442aa   | Jan 27 2017 |
-LANG to be properly packaged.
+Now, we need to set the **GOPATH** to ensure the sdk can access your chaincode and dependant packages.  
+
 ```
 GOPATH=$PWD
 ```
