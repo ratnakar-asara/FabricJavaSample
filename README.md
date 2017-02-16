@@ -30,6 +30,7 @@ Note: this assumes you will clone the repositories from your home directory.
 cd ~
 git clone https://github.com/hyperledger/fabric-sdk-java.git
 cd fabric-sdk-java
+git reset --hard a28b0db055ae4d64b5aea7df9cd75ce494d89536
 mvn install -DskipTests
 ```
 
